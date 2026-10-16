@@ -163,14 +163,16 @@ class Entregador(State):
 def main():
 
     # Dimensão aleatória para um mapa quadrado.
-    n = random.randint(3, 8)
+    n = random.randint(3, 50)
 
     print(f"Busca em largura — mapa {n}x{n}")
 
-    # 0 = obstáculo
-    # 1 = agente
-    # 2 = célula livre
-    # 3 = pedágio
+    """
+    0 = obstáculo
+    1 = agente
+    2 = célula livre
+    3 = pedágio
+    """
     mapa = [[2] * n for _ in range(n)]
 
     # Todas as posições possíveis, no formato (linha, coluna).
