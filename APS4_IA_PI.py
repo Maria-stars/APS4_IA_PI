@@ -1,4 +1,4 @@
-from aigyminsper.search.search_algorithms import BuscaLargura
+from aigyminsper.search.search_algorithms import Aestrela
 from aigyminsper.search.graph import State
 import random
 
@@ -163,8 +163,8 @@ class Entregador(State):
 def main():
 
     # Dimensão aleatória para um mapa quadrado.
-    n = random.randint(3, 50)
-
+   # n = random.randint(3, 50)
+    n = input("Digite o tamanho do grid")
     print(f"Busca em largura — mapa {n}x{n}")
 
     """
@@ -254,7 +254,7 @@ def main():
         op="início"
     )
 
-    algorithm = BuscaLargura()
+    algorithm = AEstrela()
 
     result = algorithm.search(
         state,
@@ -268,45 +268,6 @@ def main():
         print(f"Custo da solução: {result.g}")
     else:
         print("Não achou solução")
-
-    # print('Busca em largura 1x1')
-
-    # 0 = obstáculo
-    # 2 = célula livre
-    # 3 = pedágio
-
-    # mapa = [
-    #     [2, 0, 2, 2],
-    #     [3, 2, 2, 2],
-    #     [2, 2, 0, 2],
-    #     [2, 2, 2, 2]
-    # ]
-
-    # agente = (0, 0)
-    # pacote = (1, 2)
-    # destino = (3, 3)
-
-    # obstaculo = {(0, 1), (2, 2)}
-    # pedagio = {(1, 0)}
-
-    # state = Entregador(
-    #     mapa=mapa,
-    #     agente=agente,
-    #     pacote=pacote,
-    #     destino=destino,
-    #     obstaculo=obstaculo,
-    #     pedagio=pedagio,
-    #     op="início"
-    # )
-
-    # algorithm = BuscaLargura()
-    # result = algorithm.search(state, trace=False, pruning="general")
-    # if result != None:
-    #     print('Achou!')
-    #     print(result.show_path())
-    #     print(f'Custo da solução: {result.g}')
-    # else:
-    #     print('Nao achou solucao')
 
 if __name__ == '__main__':
     main()
