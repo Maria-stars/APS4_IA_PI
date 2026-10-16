@@ -1,9 +1,3 @@
-"""Interface gráfica para o código do entregador.
-Instalação: python -m pip install aigyminsper
-Execução: python entregador_visual.py
-Posições no formato (linha, coluna), com origem no canto superior esquerdo.
-A animação mostra o plano encontrado, não a exploração interna da busca.
-"""
 import random
 import threading
 import queue
